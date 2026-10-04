@@ -623,3 +623,83 @@ button {
         pointer-events: auto !important;
     }
 }
+
+/* ===== 六頁手機版統一修正 ===== */
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 六頁主要內容 */
+    .hero-content,
+    .home-content,
+    .left-content,
+    .right-content,
+    .page-home .hero-content,
+    .page-home .home-content,
+    .page-home .left-content,
+    .page-home .right-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 所有標題與文字不得超出手機 */
+    .hero h1,
+    .hero h2,
+    .description,
+    .page-label,
+    .eyebrow {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 選項區 */
+    .keyword-list {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .keyword-list span {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 按鈕區 */
+    .button-area,
+    .contact-buttons {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .button-area .btn,
+    .contact-buttons .btn {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 聯絡頁 QR */
+    .line-qr-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 首頁取消舊的左右偏移 */
+    .page-home .home-content {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
