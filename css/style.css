@@ -1539,3 +1539,96 @@ a {
         margin-right: 16px !important;
     }
 }
+/* ===== 手機版寬度最終修正 ===== */
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .site-header,
+    .hero,
+    .site-footer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-wrap {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        margin: 0;
+    }
+
+    /* 手機平常完全隱藏導覽列 */
+    .nav-menu {
+        display: none !important;
+    }
+
+    /* 按漢堡才顯示 */
+    .nav-menu.open {
+        display: flex !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        padding: 16px 20px;
+        background: rgba(3, 20, 48, 0.98);
+        z-index: 9999;
+    }
+
+    .menu-button {
+        display: block !important;
+    }
+
+    /* 首頁內容框 */
+    .page-home .hero-content {
+        width: calc(100% - 32px) !important;
+        max-width: calc(100% - 32px) !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        padding: 24px 18px !important;
+    }
+
+    .page-home .hero-content h1,
+    .page-home .hero-content h2,
+    .page-home .description,
+    .page-home .page-label {
+        max-width: 100%;
+    }
+
+    .page-home .button-area {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-home .button-area .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        white-space: normal;
+    }
+
+    .footer-wrap {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
