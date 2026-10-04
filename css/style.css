@@ -634,24 +634,18 @@ button {
         overflow-x: hidden !important;
     }
 
-    /* 六頁主要內容 */
     .hero-content,
-    .home-content,
-    .left-content,
-    .right-content,
-    .page-home .hero-content,
-    .page-home .home-content,
-    .page-home .left-content,
-    .page-home .right-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        box-sizing: border-box !important;
-    }
-
+.home-content,
+.left-content,
+.right-content {
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
     /* 所有標題與文字不得超出手機 */
     .hero h1,
     .hero h2,
