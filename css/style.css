@@ -697,3 +697,51 @@ button {
         padding-right: 20px !important;
     }
 }
+/* ===== 首頁手機版獨立修正 ===== */
+@media (max-width: 700px) {
+
+    .page-home .hero-content,
+    .page-home .home-content,
+    .page-home .left-content {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .page-home .hero-content {
+        display: block !important;
+    }
+
+    .page-home .home-content {
+        padding-right: 20px !important;
+    }
+
+    .page-home h1,
+    .page-home h2,
+    .page-home .description {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .page-home .button-area {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+    }
+
+    .page-home .button-area .btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
