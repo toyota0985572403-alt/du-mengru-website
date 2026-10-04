@@ -1,31 +1,34 @@
-/* ========================================
-   全站基本設定
-======================================== */
+/* =========================================================
+   杜孟儒｜市場分析・策略判斷
+   全站樣式
+========================================================= */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 html,
 body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     min-height: 100%;
 }
 
+html {
+    background: #06162d;
+}
+
 body {
     font-family:
-        "Microsoft JhengHei",
         "Noto Sans TC",
+        "Microsoft JhengHei",
         Arial,
         sans-serif;
 
-    background: #06142d;
     color: #ffffff;
-
-    font-size: 17px;
-    line-height: 1.75;
+    background: #06162d;
+    overflow-x: hidden;
 }
 
 a {
@@ -33,25 +36,28 @@ a {
     text-decoration: none;
 }
 
+button {
+    font: inherit;
+}
 
-/* ========================================
-   上方導覽列
-======================================== */
+
+/* =========================================================
+   頂部導覽列
+========================================================= */
 
 .site-header {
     position: relative;
-    z-index: 100;
+    z-index: 1000;
 
     width: 100%;
     height: 76px;
 
-    background: rgba(4, 17, 42, 0.96);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(4, 20, 47, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.nav-wrap {
-    width: min(1180px, calc(100% - 64px));
+.header-wrap {
+    width: min(1180px, calc(100% - 48px));
     height: 100%;
 
     margin: 0 auto;
@@ -59,69 +65,43 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    gap: 35px;
 }
-
-
-/* ========================================
-   左上品牌
-======================================== */
 
 .brand {
     display: flex;
     align-items: center;
+    gap: 12px;
 
-    gap: 14px;
+    flex-shrink: 0;
 
-    white-space: nowrap;
-}
-
-.brand strong {
-    font-size: 22px;
-    line-height: 1;
-
+    font-size: 18px;
     font-weight: 700;
-
-    letter-spacing: 0.06em;
+    letter-spacing: 1px;
 }
 
 .brand span {
-    padding-left: 14px;
-
-    border-left: 1px solid rgba(255, 255, 255, 0.30);
-
-    color: #c9d5e8;
-
-    font-size: 14px;
-    line-height: 1.4;
+    color: #c7a35a;
+    font-size: 12px;
+    font-weight: 500;
 }
-
-
-/* ========================================
-   上方按鈕
-======================================== */
 
 .nav-menu {
     display: flex;
     align-items: center;
-
-    gap: 27px;
+    gap: 28px;
 }
 
 .nav-menu a {
     position: relative;
 
-    padding: 8px 0;
+    padding: 27px 0 24px;
 
-    color: #e4eaf4;
+    color: rgba(255, 255, 255, 0.82);
 
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 1;
 
-    font-weight: 600;
-
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .nav-menu a:hover,
@@ -129,91 +109,236 @@ a {
     color: #ffffff;
 }
 
-
-/* 一般導覽底線 */
-
-.nav-menu a:not(.contact-nav)::after {
+.nav-menu a.active::after {
     content: "";
 
     position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 17px;
 
-    left: 50%;
-    bottom: 0;
-
-    width: 0;
     height: 2px;
 
-    background: #e3c679;
-
-    transform: translateX(-50%);
-
-    transition: width 0.2s;
+    background: #c7a35a;
 }
-
-.nav-menu a:not(.contact-nav):hover::after,
-.nav-menu a.active:not(.contact-nav)::after {
-    width: 100%;
-}
-
-
-/* 聯絡我 */
-
-.contact-nav {
-    padding: 9px 17px !important;
-
-    border: 1px solid rgba(255, 255, 255, 0.70);
-
-    border-radius: 5px;
-}
-
-.contact-nav:hover,
-.contact-nav.active {
-    background: rgba(255, 255, 255, 0.11);
-}
-
-
-/* 手機選單 */
 
 .menu-button {
     display: none;
 
-    border: 0;
+    width: 42px;
+    height: 42px;
 
+    padding: 0;
+
+    border: 0;
     background: transparent;
 
     color: #ffffff;
 
-    font-size: 27px;
+    font-size: 28px;
+    line-height: 1;
 
     cursor: pointer;
 }
 
 
-/* ========================================
-   六個頁面的共同主畫面
-======================================== */
+/* =========================================================
+   主視覺共用
+========================================================= */
 
 .hero {
     position: relative;
 
     width: 100%;
+    min-height: calc(100vh - 108px);
 
-    min-height: calc(100vh - 76px - 64px);
-
-    display: flex;
-    align-items: center;
-
-    background-size: cover;
-    background-position: center;
+    background-color: #071a37;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
     overflow: hidden;
 }
 
+.hero::after {
+    content: "";
 
-/* ========================================
-   六張底圖
-======================================== */
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 17, 39, 0.42) 0%,
+            rgba(3, 17, 39, 0.12) 48%,
+            rgba(3, 17, 39, 0.28) 100%
+        );
+
+    pointer-events: none;
+}
+
+.hero-wrap {
+    position: relative;
+    z-index: 2;
+
+    width: min(1180px, calc(100% - 48px));
+    min-height: calc(100vh - 108px);
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.left-content {
+    width: 430px;
+    max-width: 42%;
+}
+
+.right-content {
+    width: 470px;
+    max-width: 43%;
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   文字
+========================================================= */
+
+.eyebrow,
+.page-label {
+    margin: 0 0 18px;
+
+    color: #c7a35a;
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 0 0 16px;
+
+    color: #ffffff;
+
+    font-size: clamp(34px, 3.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: 0.5px;
+}
+
+.hero h2 {
+    margin: 0 0 14px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+.description {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   按鈕
+========================================================= */
+
+.button-area {
+    margin-top: 28px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    min-width: 145px;
+    min-height: 46px;
+
+    padding: 11px 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c7a35a;
+    border-radius: 2px;
+
+    background: #c7a35a;
+    color: #06162d;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+}
+
+.btn-outline {
+    background: rgba(4, 20, 47, 0.22);
+    color: #ffffff;
+
+    border-color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   分類標籤
+========================================================= */
+
+.keyword-list {
+    margin-top: 22px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 135px);
+    gap: 10px 12px;
+}
+
+.keyword-list span {
+    padding: 8px 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 2px;
+
+    background: rgba(4, 20, 47, 0.28);
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   各頁背景
+========================================================= */
 
 .page-home .hero {
     background-image: url("../images/home-bg.png");
@@ -240,519 +365,97 @@ a {
 }
 
 
-/* ========================================
-   背景遮罩
-======================================== */
+/* =========================================================
+   首頁
+========================================================= */
 
-.hero-shade {
-    position: absolute;
-
-    inset: 0;
-
+.page-home .hero::after {
     background:
         linear-gradient(
             90deg,
-            rgba(2, 12, 30, 0.80) 0%,
-            rgba(3, 16, 38, 0.58) 38%,
-            rgba(3, 15, 36, 0.24) 68%,
-            rgba(2, 10, 25, 0.14) 100%
+            rgba(3, 17, 39, 0.78) 0%,
+            rgba(3, 17, 39, 0.50) 31%,
+            rgba(3, 17, 39, 0.08) 56%,
+            rgba(3, 17, 39, 0.06) 100%
         );
 }
 
+.page-home .left-content {
+    width: 405px;
+    max-width: 38%;
+}
 
-/* 第二～第六頁文字在右邊 */
+.page-home h1 {
+    font-size: clamp(32px, 2.8vw, 46px);
+}
 
-.page-solutions .hero-shade,
-.page-services .hero-shade,
-.page-method .hero-shade,
-.page-insights .hero-shade,
-.page-contact .hero-shade {
+.page-home .description {
+    max-width: 390px;
+}
 
+
+/* =========================================================
+   內頁
+========================================================= */
+
+.page-solutions .hero::after,
+.page-services .hero::after,
+.page-method .hero::after,
+.page-insights .hero::after,
+.page-contact .hero::after {
     background:
         linear-gradient(
             90deg,
-            rgba(2, 12, 29, 0.14) 0%,
-            rgba(3, 14, 33, 0.24) 40%,
-            rgba(3, 14, 34, 0.72) 67%,
-            rgba(2, 11, 27, 0.88) 100%
+            rgba(3, 17, 39, 0.08) 0%,
+            rgba(3, 17, 39, 0.18) 48%,
+            rgba(3, 17, 39, 0.74) 100%
         );
 }
 
-
-/* ========================================
-   文字主要區域
-======================================== */
-
-.hero-content {
-    position: relative;
-
-    z-index: 5;
-
-    width: min(1180px, calc(100% - 64px));
-
-    margin: 0 auto;
-
-    padding-top: 62px;
-    padding-bottom: 62px;
+.page-solutions .right-content,
+.page-services .right-content,
+.page-method .right-content,
+.page-insights .right-content,
+.page-contact .right-content {
+    padding: 26px 0;
 }
 
 
-/* 首頁文字放左邊 */
-
-.home-content {
-    padding-right: 51%;
-}
-
-
-/* 其他頁文字放右邊 */
-
-.right-content {
-    padding-left: 53%;
-}
-
-
-/* ========================================
-   英文小標
-======================================== */
-
-.page-label {
-    margin-bottom: 14px;
-
-    color: #e8cb7f;
-
-    font-size: 13px;
-    line-height: 1.4;
-
-    font-weight: 700;
-
-    letter-spacing: 0.15em;
-}
-
-
-/* ========================================
-   主標題
-======================================== */
-
-.hero h1 {
-    margin-bottom: 16px;
-
-    font-size: clamp(36px, 3.6vw, 46px);
-    line-height: 1.32;
-
-    font-weight: 700;
-
-    letter-spacing: 0.025em;
-
-    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);
-}
-
-
-/* ========================================
-   副標題
-======================================== */
-
-.hero h2 {
-    margin-bottom: 15px;
-
-    font-size: 21px;
-    line-height: 1.6;
-
-    font-weight: 600;
-
-    color: #ffffff;
-
-    text-shadow: 0 2px 9px rgba(0, 0, 0, 0.45);
-}
-
-
-/* ========================================
-   說明文字
-======================================== */
-
-.description {
-    max-width: 650px;
-
-    color: #d8e1ee;
-
-    font-size: 17px;
-    line-height: 1.85;
-
-    letter-spacing: 0.01em;
-
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-}
-
-
-/* ========================================
-   第二～第五頁關鍵項目
-======================================== */
-
-.keyword-list {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 24px;
-}
-
-.keyword-list span {
-    padding: 8px 14px;
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 5px;
-
-    background: rgba(4, 23, 55, 0.58);
-
-    color: #f3f6fa;
-
-    font-size: 15px;
-    line-height: 1.45;
-}
-
-
-/* ========================================
-   真正可以按的按鈕
-======================================== */
-
-.button-area {
-    display: flex;
-    align-items: center;
-
-    gap: 14px;
-
-    margin-top: 30px;
-}
-
-.btn {
-    min-width: 148px;
-    min-height: 48px;
-
-    padding: 11px 22px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 5px;
-
-    font-size: 16px;
-    line-height: 1.4;
-
-    font-weight: 700;
-
-    letter-spacing: 0.02em;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s,
-        background 0.2s,
-        border-color 0.2s,
-        box-shadow 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-
-/* 白色主要按鈕 */
-
-.btn-main {
-    border: 1px solid #ffffff;
-
-    background: #ffffff;
-
-    color: #10264c;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
-}
-
-.btn-main:hover {
-    background: #e9eef6;
-}
-
-
-/* 透明次要按鈕 */
-
-.btn-outline {
-    border: 1px solid rgba(255, 255, 255, 0.75);
-
-    background: rgba(4, 25, 60, 0.50);
-
-    color: #ffffff;
-}
-
-.btn-outline:hover {
-    border-color: #ffffff;
-
-    background: rgba(255, 255, 255, 0.13);
-}
-
-
-/* ========================================
-   聯絡頁按鈕
-======================================== */
-
-.contact-buttons .btn {
-    min-width: 165px;
-}
-
-
-/* ========================================
-   Footer 版權
-======================================== */
-
-.site-footer {
-    min-height: 64px;
-
-    display: flex;
-    align-items: center;
-
-    background: #030c1d;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.footer-wrap {
-    width: min(1180px, calc(100% - 64px));
-
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 30px;
-
-    color: #aebbd0;
-
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* ========================================
-   平板
-======================================== */
-
-@media (max-width: 1000px) {
-
-    .menu-button {
-        display: block;
-    }
-
-    .nav-menu {
-        position: absolute;
-
-        top: 76px;
-        left: 0;
-        right: 0;
-
-        display: none;
-
-        padding: 14px 30px 23px;
-
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 2px;
-
-        background: rgba(3, 15, 37, 0.98);
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .nav-menu.open {
-        display: flex;
-    }
-
-    .nav-menu a {
-        padding: 12px 0;
-    }
-
-    .contact-nav {
-        margin-top: 7px;
-
-        text-align: center;
-    }
-
-    .home-content {
-        padding-right: 38%;
-    }
-
-    .right-content {
-        padding-left: 40%;
-    }
-}
-
-
-/* ========================================
-   手機
-======================================== */
-
-@media (max-width: 700px) {
-
-    .site-header {
-        height: 68px;
-    }
-
-    .nav-wrap,
-    .hero-content,
-    .footer-wrap {
-        width: calc(100% - 36px);
-    }
-
-    .brand {
-        gap: 0;
-    }
-
-    .brand strong {
-        font-size: 20px;
-    }
-
-    .brand span {
-        display: none;
-    }
-
-    .nav-menu {
-        top: 68px;
-    }
-
-    .hero {
-        min-height: calc(100vh - 68px);
-
-        background-position: center;
-    }
-
-    .hero-shade,
-    .page-solutions .hero-shade,
-    .page-services .hero-shade,
-    .page-method .hero-shade,
-    .page-insights .hero-shade,
-    .page-contact .hero-shade {
-
-        background: rgba(3, 14, 34, 0.72);
-    }
-
-    .hero-content {
-        padding-top: 58px;
-        padding-bottom: 58px;
-    }
-
-    .home-content,
-    .right-content {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .page-label {
-        margin-bottom: 12px;
-
-        font-size: 12px;
-    }
-
-    .hero h1 {
-        margin-bottom: 14px;
-
-        font-size: 34px;
-        line-height: 1.38;
-    }
-
-   .hero h2 {
-    margin-bottom: 13px;
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-.description {
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.keyword-list {
-    margin-top: 21px;
-}
-
-.keyword-list span {
-    font-size: 14px;
-}
-
-.button-area {
-    max-width: 330px;
-    margin-top: 27px;
-
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.btn {
-    width: 100%;
-    min-height: 48px;
-    font-size: 16px;
-}
-
-.site-footer {
-    padding: 18px 0;
-}
-
-.footer-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 6px;
-
-    font-size: 13px;
-}
-
-}
-/* 觀點文章分類 */
-.page-insights .keyword-list {
-    display: grid;
-    grid-template-columns: repeat(2, 110px);
-    gap: 10px 12px;
-    margin-top: 24px;
-}
-
-.page-insights .keyword-list span {
-    width: 110px;
-    padding: 8px 10px;
-    text-align: center;
-    white-space: nowrap;
-}
-/* ========================================
-   LINE QR Code 聯絡區
-======================================== */
+/* =========================================================
+   聯絡頁
+========================================================= */
 
 .contact-action-area {
-    margin-top: 24px;
+    margin-top: 22px;
 }
 
 .line-qr-box {
+    width: fit-content;
+
+    padding: 10px 14px 10px 10px;
+
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
 
-    width: fit-content;
-    padding: 12px 18px 12px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 5px;
 
-    background: rgba(4, 20, 48, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 6px;
+    background: rgba(4, 20, 47, 0.62);
 }
 
 .line-qr-box img {
     display: block;
 
-    width: 105px;
-    height: 105px;
+    width: 100px;
+    height: 100px;
+
+    padding: 4px;
 
     object-fit: contain;
 
     background: #ffffff;
+
     border-radius: 4px;
 }
 
@@ -763,872 +466,141 @@ a {
 }
 
 .line-qr-text strong {
-    font-size: 17px;
-    line-height: 1.4;
+    font-size: 16px;
 }
 
 .line-qr-text span {
-    color: #d2dceb;
-
-    font-size: 14px;
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
 }
 
 .page-contact .contact-buttons {
     margin-top: 14px;
 }
 
-.page-contact .contact-buttons .btn {
-    min-width: 165px;
-    width: auto;
+
+/* =========================================================
+   Footer
+========================================================= */
+
+.site-footer {
+    width: 100%;
+    height: 32px;
+
+    background: #06162d;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-wrap {
+    width: min(1180px, calc(100% - 48px));
+    height: 32px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 10px;
+    line-height: 1;
 }
 
 
-/* 手機版 */
+/* =========================================================
+   平板
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header-wrap,
+    .hero-wrap,
+    .footer-wrap {
+        width: calc(100% - 36px);
+    }
+
+    .left-content,
+    .right-content,
+    .page-home .left-content {
+        max-width: 48%;
+    }
+
+    .nav-menu {
+        gap: 18px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   手機版
+========================================================= */
 
 @media (max-width: 700px) {
-
-    .line-qr-box {
-        width: 100%;
-    }
-
-    .line-qr-box img {
-        width: 95px;
-        height: 95px;
-    }
-
-    .page-contact .contact-buttons {
-        max-width: 100%;
-    }
-
-    .page-contact .contact-buttons .btn {
-        width: 100%;
-    }
-}
-/* 首頁文字避開人物臉部 */
-@media (min-width: 1001px) {
-
-    .page-home .hero h1 {
-        max-width: 290px;
-        font-size: 32px;
-        line-height: 1.4;
-    }
-
-    .page-home .description {
-        max-width: 300px;
-    }
-}
-/* ===== 首頁背景 ===== */
-
-.page-home .hero {
-    background-image: url("../images/home-bg.png") !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-color: #061a3a !important;
-}
-/* ==================================================
-   手機版最終排版
-   只影響 700px 以下，不影響桌機
-================================================== */
-
-@media (max-width: 700px) {
-
-    /* ---------- 整體 ---------- */
 
     html,
     body {
         width: 100%;
-        margin: 0;
-        padding: 0;
+        max-width: 100%;
         overflow-x: hidden;
     }
 
-    body {
-        min-height: 100vh;
-    }
 
-
-    /* ---------- 頂部導覽 ---------- */
+    /* ---------- Header ---------- */
 
     .site-header {
-        height: 60px;
-        min-height: 60px;
+        height: 66px;
     }
 
     .header-wrap {
-        height: 60px;
+        position: relative;
+
+        width: 100%;
+        height: 66px;
+
         padding: 0 18px;
+        margin: 0;
     }
 
     .brand {
-        font-size: 17px;
-        white-space: nowrap;
+        font-size: 19px;
     }
 
     .brand span {
-        font-size: 11px;
-    }
-
-    /* 手機不把六個選單全部擠在上面 */
-    .nav-menu {
         display: none;
     }
 
-    .nav-menu.open {
-        display: flex;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        z-index: 999;
-
-        flex-direction: column;
-        align-items: stretch;
-
-        padding: 12px 18px 18px;
-        gap: 4px;
-
-        background: rgba(5, 20, 48, 0.97);
-    }
-
-    .nav-menu.open a {
-        display: block;
-        padding: 11px 6px;
-
-        font-size: 15px;
-        text-align: left;
-    }
-
-    .menu-button {
-        display: block;
-    }
-
-
-    /* ---------- 所有頁面主視覺 ---------- */
-
-    .hero {
-        min-height: calc(100svh - 90px);
-
-        padding: 0;
-
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-    }
-
-    .hero-wrap {
-        width: 100%;
-        min-height: calc(100svh - 90px);
-
-        padding: 0 22px;
-
-        display: flex;
-        align-items: center;
-    }
-
-
-    /* ---------- 首頁 ---------- */
-
-    .page-home .hero {
-        /*
-           手機版以人物為視覺中心。
-           如果人物太左/太右，只調這個 48%。
-        */
-        background-position: 48% center !important;
-    }
-
-    .page-home .hero-wrap {
-        /*
-           手機畫面不要把桌機文字硬塞在人物臉上。
-           文字改放在下半部。
-        */
-        align-items: flex-end;
-
-        padding: 0 20px 35px;
-    }
-
-    .page-home .hero-content {
-        width: 100% !important;
-        max-width: 330px !important;
-
-        margin: 0 !important;
-        transform: none !important;
-
-        padding: 18px;
-
-        background: rgba(4, 18, 43, 0.78);
-        backdrop-filter: blur(3px);
-
-        border-radius: 8px;
-    }
-
-    .page-home .eyebrow {
-        margin-bottom: 8px;
-
-        font-size: 10px;
-        letter-spacing: 1px;
-
-        white-space: nowrap;
-    }
-
-    .page-home h1 {
-        margin: 0 0 10px;
-
-        font-size: 25px !important;
-        line-height: 1.35 !important;
-
-        word-break: keep-all !important;
-    }
-
-    .page-home h2 {
-        margin: 0 0 9px;
-
-        font-size: 15px !important;
-        line-height: 1.6 !important;
-
-        word-break: keep-all !important;
-    }
-
-    .page-home .description {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 0;
-
-        font-size: 13px !important;
-        line-height: 1.75 !important;
-
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-    }
-
-    .page-home .button-area {
-        width: 100%;
-        max-width: 100%;
-
-        margin-top: 15px;
-
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    .page-home .btn {
-        width: auto;
-        flex: 1;
-
-        min-height: 42px;
-
-        padding: 9px 8px;
-
-        font-size: 13px;
-        white-space: nowrap;
-    }
-
-
-    /* ---------- 內頁 ----------
-       解決方案 / 服務項目 / 分析方法 / 觀點文章 / 聯絡我
-    */
-
-    .page-solutions .hero,
-    .page-services .hero,
-    .page-method .hero,
-    .page-insights .hero,
-    .page-contact .hero {
-        background-position: center center !important;
-    }
-
-    .right-content {
-        width: 100% !important;
-        max-width: 340px !important;
-
-        margin: 0 auto !important;
-        transform: none !important;
-
-        padding: 20px;
-
-        background: rgba(4, 18, 43, 0.74);
-        backdrop-filter: blur(3px);
-
-        border-radius: 8px;
-    }
-
-    .right-content h1 {
-        font-size: 30px !important;
-        line-height: 1.25;
-    }
-
-    .right-content h2 {
-        font-size: 16px !important;
-        line-height: 1.6;
-    }
-
-    .right-content .description {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-
-    /* ---------- 分類標籤 ---------- */
-
-    .keyword-list {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-        width: 100%;
-        gap: 8px !important;
-
-        margin-top: 16px !important;
-    }
-
-    .keyword-list span {
-        width: 100% !important;
-
-        padding: 8px 5px !important;
-
-        font-size: 12px !important;
-        text-align: center;
-
-        white-space: nowrap;
-    }
-
-
-    /* ---------- 內頁按鈕 ---------- */
-
-    .right-content .button-area {
-        width: 100%;
-        max-width: 100%;
-
-        margin-top: 18px;
-
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    .right-content .btn {
-        width: auto;
-        flex: 1;
-
-        min-height: 42px;
-
-        padding: 9px 7px;
-
-        font-size: 13px;
-
-        white-space: nowrap;
-    }
-
-
-    /* ---------- 聯絡頁 QR ---------- */
-
-    .page-contact .contact-action-area {
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 14px;
-
-        margin-top: 18px;
-    }
-
-    .page-contact .line-qr-box {
-        display: flex;
-        align-items: center;
-
-        gap: 12px;
-    }
-
-    .page-contact .line-qr-box img {
-        width: 90px;
-        height: 90px;
-
-        padding: 4px;
-
-        object-fit: cover;
-
-        background: #fff;
-
-        border-radius: 5px;
-    }
-
-    .page-contact .contact-buttons {
-        width: 100%;
-        max-width: 220px;
-
-        margin-top: 0;
-    }
-
-
-    /* ---------- Footer ---------- */
-
-    .site-footer {
-        height: 28px !important;
-        min-height: 28px !important;
-
-        padding: 0 !important;
-    }
-
-    .footer-wrap {
-        height: 28px !important;
-        min-height: 28px !important;
-
-        padding: 0 15px !important;
-
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-
-        font-size: 9px !important;
-        line-height: 1 !important;
-    }
-
-}
-/* ===== 手機版最終覆蓋 ===== */
-@media (max-width: 700px) {
-
-    html,
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    /* 頂部導覽 */
-    .site-header {
-        width: 100%;
-        height: 72px;
-        position: relative;
-        z-index: 1000;
-    }
-
-    .header-wrap {
-        width: 100%;
-        height: 72px;
-        padding: 0 22px;
-        box-sizing: border-box;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    /* 左上品牌 */
-    .brand {
-        position: relative;
-        z-index: 1002;
-    }
-
-    .brand-name {
-        font-size: 22px;
-        white-space: nowrap;
-    }
-
-    /* 手機漢堡按鈕 */
     .menu-button {
         display: flex;
         align-items: center;
         justify-content: center;
 
         margin-left: auto;
-        font-size: 30px;
-
-        position: relative;
-        z-index: 1002;
     }
 
-    /* 導覽選單預設完全收起 */
     .nav-menu {
-        display: none !important;
+        display: none;
 
         position: absolute;
-        top: 72px;
+        top: 66px;
         left: 0;
+        right: 0;
 
         width: 100%;
-        padding: 18px 22px 24px;
 
-        box-sizing: border-box;
-
-        background: rgba(4, 20, 47, 0.97);
+        padding: 10px 20px 18px;
 
         flex-direction: column;
         align-items: stretch;
         gap: 0;
 
-        z-index: 1001;
+        background: rgba(4, 20, 47, 0.98);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
-
-    /* 點漢堡後才顯示 */
-    .nav-menu.open {
-        display: flex !important;
     }
-
-    .nav-menu a {
-        width: 100%;
-        padding: 13px 0;
-
-        text-align: center;
-        font-size: 16px;
-
-        box-sizing: border-box;
-    }
-
-    /* 首頁主畫面 */
-    .page-home .hero {
-        width: 100%;
-        min-height: calc(100svh - 72px);
-
-        padding: 0;
-
-        background-image: url("../images/home-bg.png");
-        background-repeat: no-repeat;
-
-        /*
-        手機改用 cover，
-        不讓背景左右露白
-        */
-        background-size: cover;
-
-        /*
-        人物保留在畫面偏左，
-        避免臉被裁掉
-        */
-        background-position: 38% center;
-
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* 加深左側，讓文字清楚 */
-    .page-home .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-
-        background:
-            linear-gradient(
-                90deg,
-                rgba(3, 18, 43, 0.92) 0%,
-                rgba(3, 18, 43, 0.82) 46%,
-                rgba(3, 18, 43, 0.32) 100%
-            );
-
-        pointer-events: none;
-    }
-
-    /* 首頁左邊文字 */
-    .page-home .hero-content {
-        position: relative;
-        z-index: 2;
-
-        width: auto;
-        max-width: 390px;
-
-        margin: 0;
-        padding: 110px 26px 70px 32px;
-
-        box-sizing: border-box;
-
-        text-align: left;
-    }
-
-    .page-home .eyebrow {
-        font-size: 13px;
-        line-height: 1.5;
-        letter-spacing: 1.5px;
-        margin-bottom: 22px;
-    }
-
-    .page-home h1 {
-        margin: 0 0 18px;
-
-        font-size: 30px;
-        line-height: 1.45;
-
-        max-width: 340px;
-    }
-
-    .page-home h2 {
-        margin: 0 0 16px;
-
-        font-size: 17px;
-        line-height: 1.6;
-
-        max-width: 340px;
-    }
-
-    .page-home .description {
-        max-width: 335px;
-
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    /* 首頁按鈕 */
-    .page-home .button-area {
-        width: 100%;
-        max-width: 335px;
-
-        margin-top: 24px;
-
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .page-home .button-area .btn {
-        width: 50%;
-        min-width: 0;
-        min-height: 48px;
-
-        padding: 10px 8px;
-
-        font-size: 14px;
-        white-space: nowrap;
-    }
-
-    /* 頁尾 */
-    .site-footer {
-        position: relative;
-        width: 100%;
-    }
-
-    .footer-wrap {
-        width: 100%;
-        padding: 14px 20px;
-        box-sizing: border-box;
-
-        font-size: 12px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-
-        text-align: center;
-    }
-}
-/* ===== 手機版最終修正 ===== */
-@media (max-width: 700px) {
-
-    /* 手機只保留漢堡按鈕 */
-    .nav-menu {
-        display: none !important;
-    }
-
-    .nav-menu.open {
-        display: flex !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-
-        flex-direction: column;
-        padding: 18px 24px;
-        gap: 0;
-
-        background: rgba(3, 20, 48, 0.98);
-    }
-
-    .nav-menu.open a {
-        display: block;
-        width: 100%;
-        padding: 13px 0;
-    }
-
-    .menu-button {
-        display: block !important;
-    }
-
-    /* 首頁內容 */
-    .page-home .hero {
-        min-height: calc(100svh - 74px);
-    }
-
-    .page-home .hero-content {
-        width: calc(100% - 32px);
-        max-width: 560px;
-        margin: 0 16px;
-        padding: 26px 18px;
-    }
-
-    .page-home .eyebrow {
-        font-size: 13px;
-        line-height: 1.5;
-        letter-spacing: 1.5px;
-    }
-
-    .page-home h1 {
-        font-size: 31px;
-        line-height: 1.35;
-    }
-
-    .page-home h2 {
-        font-size: 17px;
-        line-height: 1.6;
-    }
-
-    .page-home .description {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .page-home .button-area {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .page-home .btn {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 700px) {
-    body.page-home header.site-header .nav-menu {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        overflow: hidden !important;
-    }
-
-    body.page-home header.site-header .nav-menu.open {
-        display: flex !important;
-        visibility: visible !important;
-        height: auto !important;
-    }
-}
-/* ===== 手機版橫向溢出修正 ===== */
-@media (max-width: 700px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden !important;
-    }
-
-    .site-header,
-    .nav-wrap,
-    .hero,
-    .hero-content,
-    .page-home .hero,
-    .page-home .hero-content {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .page-home .hero {
-        width: 100% !important;
-        overflow: hidden !important;
-    }
-
-    .page-home .hero-content {
-        width: calc(100% - 32px) !important;
-        max-width: calc(100% - 32px) !important;
-        margin-left: 16px !important;
-        margin-right: 16px !important;
-    }
-}
-/* ===== 手機版寬度最終修正 ===== */
-@media (max-width: 700px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    .site-header,
-    .hero,
-    .site-footer {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .nav-wrap {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 18px;
-        padding-right: 18px;
-        margin: 0;
-    }
-
-    /* 手機平常完全隱藏導覽列 */
-    .nav-menu {
-        display: none !important;
-    }
-
-    /* 按漢堡才顯示 */
-    .nav-menu.open {
-        display: flex !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: 100%;
-        flex-direction: column;
-        padding: 16px 20px;
-        background: rgba(3, 20, 48, 0.98);
-        z-index: 9999;
-    }
-
-    .menu-button {
-        display: block !important;
-    }
-
-    /* 首頁內容框 */
-    .page-home .hero-content {
-        width: calc(100% - 32px) !important;
-        max-width: calc(100% - 32px) !important;
-        margin-left: 16px !important;
-        margin-right: 16px !important;
-        padding: 24px 18px !important;
-    }
-
-    .page-home .hero-content h1,
-    .page-home .hero-content h2,
-    .page-home .description,
-    .page-home .page-label {
-        max-width: 100%;
-    }
-
-    .page-home .button-area {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .page-home .button-area .btn {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        white-space: normal;
-    }
-
-    .footer-wrap {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-}
