@@ -1507,3 +1507,35 @@ a {
         height: auto !important;
     }
 }
+/* ===== 手機版橫向溢出修正 ===== */
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    .site-header,
+    .nav-wrap,
+    .hero,
+    .hero-content,
+    .page-home .hero,
+    .page-home .hero-content {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .page-home .hero {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .page-home .hero-content {
+        width: calc(100% - 32px) !important;
+        max-width: calc(100% - 32px) !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+    }
+}
