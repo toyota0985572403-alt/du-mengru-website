@@ -603,4 +603,23 @@ button {
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
+    .nav-menu.open {
+    display: flex;
+}
     }
+    @media (max-width: 700px) {
+
+    .nav-menu:not(.open) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    .nav-menu.open {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+}
