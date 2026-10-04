@@ -1493,3 +1493,17 @@ a {
         width: 100%;
     }
 }
+@media screen and (max-width: 700px) {
+    body.page-home header.site-header .nav-menu {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+
+    body.page-home header.site-header .nav-menu.open {
+        display: flex !important;
+        visibility: visible !important;
+        height: auto !important;
+    }
+}
